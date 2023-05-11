@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title> Text to QR Generator</title>
+  </head>
+  <h1 class= "title">TXT TO QR CODE GENERATOR</h1>
+  <body>
+    <div class="container">
+      <img class="qr-image" src="" alt="QR Code">
+    </div>
+    <div>
+      <input class="qr-input" type="text" placeholder="Enter UR TEXT.">
+      <button class="generate-btn">Generate QR Code</button>
+    </div>
+    
+    <script>
+      var container = document.querySelector(".container");
+      var generateBtn = document.querySelector(".generate-btn");
+      var qrInput = document.querySelector(".qr-input");
+      var qrImg = document.querySelector(".qr-image");
+    
+      generateBtn.onclick = function () {      
+        if(qrInput.value.length > 0){ 
+          generateBtn.innerText = "Generating QR Code..."       
+          qrImg.src = qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrInput.value;
+          qrImg.onload = function () {
+            container.classList.add("active");
+            generateBtn.innerText = "Generate QR Code";
+          }
+        }
+      }
+    </script>
+  </body>

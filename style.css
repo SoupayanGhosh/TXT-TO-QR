@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .qr-image {
+    display: none;
+  }
+  
+  .container.active .qr-image {
+    display: block;
+  }
+  
+  .qr-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e63939;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .generate-btn {
+    padding: 10px 20px;
+    background-color: #f5740c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .generate-btn:hover {
+    background-color: #2589e6;
+  }
+  
+  .generate-btn:active {
+    background-color: #df29e6;
+  }
